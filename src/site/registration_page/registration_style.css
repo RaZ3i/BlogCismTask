@@ -1,0 +1,199 @@
+*{
+    box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: 'South Park Cyrillic';
+    src: url('SouthPark_Cyr.eot');
+    src: local('South Park Cyrillic'), local('SouthPark_Cyr'),
+        url('SouthPark_Cyr.eot?#iefix') format('embedded-opentype'),
+        url('SouthPark_Cyr.woff2') format('woff2'),
+        url('SouthPark_Cyr.woff') format('woff'),
+        url('SouthPark_Cyr.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body{
+    margin: 0;
+    position: relative;
+    background-image: url(../images/background.png);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(3px);
+}
+
+
+input{
+   width: 200px;
+   height: 25px;
+   font-family: 'South Park Cyrillic', sans-serif;   
+}
+
+h1{
+    margin-bottom: 0;
+}
+
+#username_input{
+    margin-left: 30px;
+}
+
+#email_input{
+    margin-left: 67px;
+}
+
+#password_input{
+    margin-left: 20px;
+}
+
+
+.input_ok{
+    margin-left: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    color: red;
+    width: 25px;
+    height: 25px;    
+}
+
+.reg_window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5%;
+    text-align: center;
+    font-family: 'South Park Cyrillic', sans-serif;
+    background-color: orange;
+    width: 500px;
+    height: 350px;
+}
+
+.reg_form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.block_to_row{
+    margin-top: 40px;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.back_btn{
+    position: absolute;
+    top: -3%;
+    left: 5%;
+    transform: translate(-5%, -3%);
+    font-size: 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.reg_btn{
+    width: 150px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.btn{
+    padding: 0;
+    margin-top: 30px;
+    font-family: 'South Park Cyrillic', sans-serif;
+    background-color:  rgb(30, 181, 50);
+    border: 0px solid rgb(129, 126, 126);
+    transition: all 0.5s;
+    cursor: pointer
+}
+
+.back_btn:hover{
+    animation-name: rotation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotation {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.btn:hover{
+    background-color:  rgb(86, 235, 17);
+}
+
+.btn:disabled{
+    cursor: no-drop;
+    background-color:  rgb(59, 117, 32);
+    color: gray;
+}
+
+.red_shadow{
+    box-shadow: 0px 0px 10px 5px red;
+    transition: all 0.5s;
+}
+
+.green_shadow{
+    box-shadow: 0px 0px 10px 5px #04ff00;
+    transition: all 0.5s;
+}
+
+.text_reg{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+    font-size: 30px;
+    color: rgb(81, 255, 0);
+    margin-top: 40px; 
+    margin-bottom: 0;
+}
+
+
+/* КАРТИНКИ */
+
+.main_characters{
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%,-100%);
+    width: 430px;
+    height: auto;
+}
+
+.batters{
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translate(-110%,-50%);
+    width: 300px;
+    height: auto;
+}
+
+.towel{
+    position: absolute;
+    top: 22%;
+    left: 15%;
+    transform: translate(-22%,-15%);
+    width: 100px;
+    height: auto;
+}
+
+.rendy{
+    position: absolute;
+    top: 12%;
+    left: 23%;
+    transform: translate(-12%,-23%);
+    width: 100px;
+    height: auto;
+}

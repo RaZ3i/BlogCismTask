@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'South Park Ext';
+    src: url('SouthParkExt.eot');
+    src: local('South Park Ext'), local('SouthParkExt'),
+        url('SouthParkExt.eot?#iefix') format('embedded-opentype'),
+        url('SouthParkExt.woff2') format('woff2'),
+        url('SouthParkExt.woff') format('woff'),
+        url('SouthParkExt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'South Park Cyrillic';
+    src: url('SouthPark_Cyr.eot');
+    src: local('South Park Cyrillic'), local('SouthPark_Cyr'),
+        url('SouthPark_Cyr.eot?#iefix') format('embedded-opentype'),
+        url('SouthPark_Cyr.woff2') format('woff2'),
+        url('SouthPark_Cyr.woff') format('woff'),
+        url('SouthPark_Cyr.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

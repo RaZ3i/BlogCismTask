@@ -1,0 +1,164 @@
+@font-face {
+    font-family: 'South Park Cyrillic';
+    src: url('SouthPark_Cyr.eot');
+    src: local('South Park Cyrillic'), local('SouthPark_Cyr'),
+        url('SouthPark_Cyr.eot?#iefix') format('embedded-opentype'),
+        url('SouthPark_Cyr.woff2') format('woff2'),
+        url('SouthPark_Cyr.woff') format('woff'),
+        url('SouthPark_Cyr.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.opacity{
+    background-color: gray;
+}
+
+
+.post{
+    font-family: 'South Park Cyrillic', sans-serif;
+    margin-top: 25px;
+    width: 1000px;
+    height: auto;
+    border: dashed 2px black;
+    border-radius: 3%;
+    padding: 5px;
+}
+
+
+.container{
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: orange;
+    width: 100%;
+    height: 10vh;
+}
+
+.btn{
+    font-family: 'South Park Cyrillic', sans-serif;
+    padding: 0;
+}
+
+
+.create_post{
+    font-size: 20px;
+    width: 180px;
+    height: 25px;
+    margin: 10px;
+}
+
+.logout{
+    font-size: 20px;
+    width: 100px;
+    height: 25px;
+    margin: 10px;
+}
+
+.like{
+    margin-left: 96%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 10px;
+    transition: all 0.7s;
+}
+
+.like:hover:not(:disabled){
+    background-color: blanchedalmond;
+    transition: all 0.7s;
+}
+
+
+
+.like_count{
+    font-family: 'South Park Cyrillic', sans-serif;
+}
+
+
+.mod_and_del{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.modify_post{
+    font-family: 'South Park Cyrillic', sans-serif;
+    padding: 3px;
+    border-radius: 20%;
+    margin-right: 30px;
+    transition: all 0.7s;
+}
+
+.modify_post:hover:not(:disabled){
+    background-color: blanchedalmond;
+    transition: all 0.7s;
+}
+
+.delete_post{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    font-size: 10px;
+    transition: all 0.7s;
+}
+
+.theme{
+    margin-top: 10px;
+}
+
+.delete_post:hover:not(:disabled){
+    background-color: red;
+    transition: all 0.7s;
+}
+
+.author, .data, .modify_post{
+    font-size: 11px;
+}
+
+
+.accept_changes{
+    font-family: 'South Park Cyrillic', sans-serif;
+    border-radius: 50%;
+    color: green;
+    transition: all 0.7s;
+    margin-right: 10px;
+}
+
+.accept_changes:hover{
+    background-color: rgb(137, 211, 137);
+    transition: all 0.7s;
+}
+
+.cancel_changes{
+    font-family: 'South Park Cyrillic', sans-serif;
+    border-radius: 50%;
+    color: red;
+    transition: all 0.7s;
+    margin-right: 10px;
+}
+
+.cancel_changes:hover{
+    background-color: rgb(226, 114, 114);
+    transition: all 0.7s;
+}
+
+
+textarea{
+    font-size: 15px;
+    font-family: 'South Park Cyrillic', sans-serif;
+    margin: 0;
+}

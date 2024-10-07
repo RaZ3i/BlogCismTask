@@ -1,0 +1,33 @@
+{% extends "home_page.html" %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/style/modal_window.css') }}">
+{% endblock %}
+
+{% block body %}
+    {% for post in posts_info %}
+    {{ super() }}
+    {% endfor %}
+  {% block modal %}
+        <form action="" class = "creation_form">
+          <div>
+            <input class = "input_field text" type="text" name = "post_theme" placeholder="Тема" maxlength="20" required>
+          </div>
+          <div>
+            <textarea name="post_text" id="" 
+                      rows="15" cols="45"  
+                      placeholder="Расскажите, что у вас нового"
+                      required
+                      wrap="hard"
+                      maxlength="4096"></textarea>
+          </div>
+        </form>
+        <button class="publish">Опубликовать</button>
+        <button class="close_window">Х</button>
+        <button class="clear_field">Очистить поле</button>
+  {% endblock %}
+  {% block javascript %}
+  {{ super() }}
+  <script src="{{ url_for('static', path='/script/create_post.js') }}"></script>
+  {% endblock %}
+{% endblock %}

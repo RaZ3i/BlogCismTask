@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/style/home_page_style.css') }}">
+    <title>Главная страница</title>
+    {% endblock %}
+</head>
+<body>
+    <div class="menu">
+            <button class = "btn create_post">
+                Создать пост
+            </button>
+            <button class = "btn logout">
+                Выйти
+            </button>
+    </div>
+    
+    <main class = "container">
+        {% for post in posts_info %}
+        <div class = "post" id = "{{ post.id }}" data-post-id="{{ post.id }}">
+            {% if user_info.id == post.article_author_id %}
+            <div class="mod_and_del" data-mod_and_del-id="{{ post.id }}">
+                <button class = "btn modify_post" id = "{{ post.id }}" data-mod-id="{{ post.id }}">Редактировать</button>
+                <button class = "btn delete_post" id = "{{ post.id }}" data-author_id="{{ post.article_author_id }}">Х</button>
+            </div>
+            {% endif %}
+            <div class = "author">Автор: {{ post.article_author }}</div>
+            <div class = "data">Дата публикации: {{ post.created_at.strftime('%d-%m-%Y') }} в {{ post.created_at.strftime('%H:%M') }}</div>
+            <div class = "theme">Тема: {{ post.article_theme }}</div>
+            <div class = "main_text" data-text-id="{{ post.id }}">
+                {{ post.article_text }}
+            </div>
+            <button class = "btn like" id = "{{ post.id }}">&#10084; <span class = "like_count" data-id="{{ post.id }}">{% if post.likes_id_users %} {{ post.likes_id_users|length }} {% else %} 0 {% endif %}</span></button>
+        </div>
+        {% endfor %}
+    </main>
+    <div class = "modal_window">
+        {% block modal %}{% endblock %}
+    </div>
+
+    {% block javascript %}
+    <script src="{{ url_for('static', path='/script/home_page.js') }}"></script>
+    {% endblock %}
+</body>
+</html>
