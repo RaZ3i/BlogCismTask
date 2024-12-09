@@ -18,13 +18,25 @@ class UserRegister(BaseModel):
     model_config = ConfigDict(regex_engine="python-re")
     username: str
     email: EmailStr
-    hash_password: Annotated[
-        str,
-        Field(
-            ...,
-            pattern=r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{4,}$",
-        ),
-    ]
+    hash_password: str
+
+    @field_validator("hash_password")
+    @classmethod
+    def passwords_match(cls, value: str):
+        if not re.match(
+            r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{4,}$",
+            value,
+        ):
+            raise ValueError("Wrong type password")
+        return value
+
+    # hash_password: Annotated[
+    #     str,
+    #     Field(
+    #         ...,
+    #         pattern=r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{4,}$",
+    #     ),
+    # ]
 
     # @classmethod
     # def validate_password(cls, value: str) -> bool:

@@ -28,7 +28,7 @@ function ValidateForm() {
 }
 //переход на страницу регистрации
 btnReg.addEventListener("click", function(){
-    window.location.href = "http://localhost:8093/pages/registration";
+    window.location.href = "http://127.0.0.1:8150/pages/registration";
 })
 
 
@@ -43,7 +43,7 @@ async function Authorization() {
     // }
     // ждем ответ с сервера
     try {
-        let response = await fetch("http://127.0.0.1:8093/auth/login/", {
+        let response = await fetch("http://127.0.0.1:8150/auth/login/", {
             method: "POST",
             body: new URLSearchParams(data),
             headers: { //необходимые заголовки из документации API 
@@ -56,7 +56,7 @@ async function Authorization() {
             const json = await response.json();
             if (json.success) {
                 console.log(json);
-                window.location.href = "http://127.0.0.1:8093/pages/home_page";
+                window.location.href = "http://127.0.0.1:8150/pages/home_page";
                 console.log(home_page)
             }
             else if (!json.success){

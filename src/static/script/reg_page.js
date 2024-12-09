@@ -22,7 +22,7 @@ RegForm.addEventListener("submit", e=>{
 })
 regBtn.addEventListener("click", SubmitRegistration)
 backBtn.addEventListener("click", function() {
-    window.location.href = "http://localhost:8093/pages/authenticate";
+    window.location.href = "http://127.0.0.1:8150/pages/authenticate";
 })
 
 function ValidateForm() {
@@ -49,7 +49,7 @@ async function SubmitRegistration() {
     ClearField();
     // ждем ответ с сервера
     try {
-        let response = await fetch("http://localhost:8093/auth/register/", {
+        let response = await fetch("http://127.0.0.1:8150/auth/register/", {
             // mode: 'cors',
             method: "POST",
             body: new_user,
@@ -62,7 +62,7 @@ async function SubmitRegistration() {
         if(response.ok) {
             const json = await response.json();
             if (json.success) {
-                window.location.href = "http://127.0.0.1:8093/pages/home_page"
+                window.location.href = "http://127.0.0.1:8150/pages/home_page"
             }
             else if (!json.success){
                 // LightFields();

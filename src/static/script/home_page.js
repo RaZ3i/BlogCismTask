@@ -33,7 +33,7 @@ document.addEventListener("click", e=>{
 
 document.addEventListener("click", e=>{
     if (e.target.classList.contains("cancel_changes")) {
-        window.location.href = "http://127.0.0.1:8093/pages/home_page";
+        window.location.href = "http://127.0.0.1:8150/pages/home_page";
     }
 })
 
@@ -46,13 +46,13 @@ document.addEventListener("click", e=>{
 
 async function logout() {
     try {
-        const response = await fetch("http://127.0.0.1:8093/auth/logout", {
+        const response = await fetch("http://127.0.0.1:8150/auth/logout", {
             method: "POST",
             });
             if(response.ok) {
                 const json = await response.json();
                 if (json.success) {
-                    window.location.href = "http://127.0.0.1:8093/pages/authenticate"
+                    window.location.href = "http://127.0.0.1:8150/pages/authenticate"
                     console.log(json);
                     
                 }
@@ -66,7 +66,7 @@ async function logout() {
 }
 
 async function create_post() {
-    window.location.href = "http://127.0.0.1:8093/pages/create_post_window"
+    window.location.href = "http://127.0.0.1:8150/pages/create_post_window"
 }
 
 async function delete_post(id) {
@@ -77,7 +77,7 @@ async function delete_post(id) {
             if(response.ok) {
                 const json = await response.json();
                 if (json.success) {
-                    window.location.href = "http://127.0.0.1:8093/pages/home_page"
+                    window.location.href = "http://127.0.0.1:8150/pages/home_page"
                     console.log(json);
                     
                 }
@@ -93,7 +93,7 @@ async function delete_post(id) {
 async function like_post(id) {
     const likeCount = document.querySelector("[data-id=" + CSS.escape(id) + "]");
     try {
-        const response = await fetch(`http://127.0.0.1:8093/profile/like_post?post_id=${id}`, {
+        const response = await fetch(`http://127.0.0.1:8150/profile/like_post?post_id=${id}`, {
             method: "PATCH",
             });
             if(response.ok) {
@@ -123,7 +123,7 @@ async function modify_post(id, text) {
         new_text: text
     }
         try {
-            let response = await fetch("http://127.0.0.1:8093/profile/modify_post/", {
+            let response = await fetch("http://127.0.0.1:8150/profile/modify_post/", {
                 method: "PATCH",
                 body: JSON.stringify(new_post_data),
                 headers: { //необходимые заголовки из документации API 
@@ -136,7 +136,7 @@ async function modify_post(id, text) {
                 const json = await response.json();
                 if (json.success) {
                     console.log(json);
-                    window.location.href = "http://127.0.0.1:8093/pages/home_page";
+                    window.location.href = "http://127.0.0.1:8150/pages/home_page";
                 }
                 else if (!json.success){
                     console.log(json);
