@@ -82,17 +82,6 @@ async def like_dislike(
     )
 
 
-@router.patch("/like_post_not_cookie")
-async def like_dislike(
-    post_id: int,
-    current_user: Annotated[User, Depends(get_current_user)],
-    session: AsyncSession = Depends(get_async_session),
-):
-    return await like_or_dislike(
-        post_id=post_id, user_id=current_user.id, session=session
-    )
-
-
 @router.get("/get_all_posts")
 async def get_all_post():
     return await get_posts()
