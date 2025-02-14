@@ -52,7 +52,7 @@
 
 ## Инструкция для запуска в PyCharm
 
-1. Выбрать File -> Project from version control В открывшемся окне вставить в поле URL ссылку на репозиторий (https://github.com/RaZ3i/TestCase.git) В поле Directory выбрать место, куда клонируется репозиторий
+1. Выбрать File -> Project from version control В открывшемся окне вставить в поле URL ссылку на репозиторий (https://github.com/RaZ3i/BlogCismTask.git) В поле Directory выбрать место, куда клонируется репозиторий
 2. Создать виртуальное окружение с помощью команды: **_python -m venv venv_**
 3. Активровать окружение с помощью команды: **_venv/Scripts/activate_**
 4. Установить зависимости с помощью команды: **_pip install -r requirements.txt_**
